@@ -6,7 +6,7 @@ We leverage the [`langchain`](https://github.com/hwchase17/langchain) library in
 
 ## Our Vision: Build the Best Open-Source Autonomous Sales Agent
 
-hELPING bUSINESS OWNERS KICK ASS AND DOMINATE THEIR NICHES FOR OVER 20 YEARS
+HELPING BUSINESS OWNERS KICK ASS AND DOMINATE THEIR NICHES FOR OVER 20 YEARS
 
 ### If you looking for help building your Agents
 
@@ -88,23 +88,23 @@ sales_agent.step()
 
 ## Product Knowledge Base
 
-The AI Sales Agent has access to tools, such as your internal Product Knowledge base.
-This allows the agent to only talk about your own products and significantly reduces hallucinations.
+The AI Sales Agent can access tools like your internal Product Knowledge base.
+This allows the agent to only talk about your products and significantly reduces hallucinations.
 
 ## Understanding Context
 
-The AI Sales Agent understands the conversation stage (you can define your own stages fitting your needs):
+The AI Sales Agent understands the conversation stage (you can define your stages fitting your needs):
 
 - Introduction: Start the conversation by introducing yourself and your company. 
 - Qualification: Qualify the prospect by confirming if they are the right person to talk to regarding your product/service.
 - Value proposition: Briefly explain how your product/service can benefit the prospect. 
 - Needs analysis: Ask open-ended questions to uncover the prospect's needs and pain points. 
-- Solution presentation: Based on the prospect's needs, present your product/service as the solution that can address their pain points.
-- Objection handling: Address any objections that the prospect may have regarding your product/service. 
+- Solution presentation: Based on the prospect's needs, present your product/service as the solution to address their pain points.
+- Objection handling: Address any objections the prospect may have regarding your product/service. 
 - Close: Ask for the sale by proposing a next step. 
-- End Conversation: The user does not want to continue the conversation, so end the call.
+- End Conversation: The user does not want to continue, so end the call.
  
-As such, this agent can have a natural sales conversation with a prospect and behaves based on the conversation stage. Hence, this notebook demonstrates how we can use AI to automate sales development representatives activites, such as outbound sales calls. 
+As such, this agent can have a natural sales conversation with a prospect and behave based on the conversation stage. Hence, this notebook demonstrates how we can use AI to automate sales development representatives' activites, such as outbound sales calls. 
 
 
 ## Architecture
@@ -144,7 +144,7 @@ Please refer to [README-api.md](https://github.com/ecomoptimizer/ca-csmgpt/blob/
 
 For questions, you can [contact the repo author](mailto:ecomoptimizer@gmail.com).
 
-Follow me at [@FilipMichalsky](https://twitter.com/Ecomoptimizer)
+Follow me at [@Ecomoptimizer](https://twitter.com/Ecomoptimizer)
 
 
 ## CA-CSMGPT Roadmap
