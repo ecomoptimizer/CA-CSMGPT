@@ -1,4 +1,4 @@
-# :robot: CA-CSNGPT - Your Context-Aware bOOB jOB!
+# :robot: CA-CSMGPT - Your Context-Aware BOOB JOB!
 
 
 
@@ -10,7 +10,7 @@ hELPING bUSINESS OWNERS KICK ASS AND DOMINATE THEIR NICHES FOR OVER 20 YEARS
 
 ### If you looking for help building your Agents
 
-Please send an email to [the repo author](mailto:filipmichalsky@gmail.com).
+Please send an email to [the repo author](mailto:ecomoptimizer@gmail.com).
 
 ## :red_circle: Latest News
 
