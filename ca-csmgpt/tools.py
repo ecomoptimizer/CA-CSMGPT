@@ -1,6 +1,6 @@
 from langchain.agents import Tool
 from langchain.chains import RetrievalQA
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceBgeEmbeddings
 from langchain.llms import OpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -18,7 +18,9 @@ def setup_knowledge_base(product_catalog: str = None):
     texts = text_splitter.split_text(product_catalog)
 
     llm = OpenAI(temperature=0)
-    embeddings = OpenAIEmbeddings()
+    model_name = "BAAI/bge-base-en"
+    embed_kwargs = {'normalize_embeddings': True}
+    embeddings = HuggingFaceBgeEmbeddings(model_name=model_name, encode_kwargs=embed_kwargs)
     docsearch = Chroma.from_texts(
         texts, embeddings, collection_name="product-knowledge-base"
     )
