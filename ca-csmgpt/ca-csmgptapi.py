@@ -2,7 +2,7 @@ import json
 
 from langchain.chat_models import ChatLiteLLM
 
-from ca-csmgpt.agents import CA-CSMGPT
+from ca-csmgpt.agents import ca-csmgpt
 
 GPT_MODEL = "gpt-3.5-turbo-16k-0613"
 # GPT_MODEL_16K = "gpt-3.5-turbo-16k-0613"
@@ -24,7 +24,7 @@ class CA-CSMGPTAPI:
             print("No agent config specified, using a standard config")
             # USE_TOOLS = True
             if self.USE_TOOLS:
-                sales_agent = CA-CSMGPT.from_llm(
+                sales_agent = ca-csmgpt.from_llm(
                     self.llm,
                     use_tools=True,
                     product_catalog="examples/sample_product_catalog.txt",
@@ -32,14 +32,14 @@ class CA-CSMGPTAPI:
                     verbose=self.verbose,
                 )
             else:
-                sales_agent = CA-CSMGPT.from_llm(self.llm, verbose=self.verbose)
+                sales_agent = ca-csmgpt.from_llm(self.llm, verbose=self.verbose)
 
         else:
             with open(self.config_path, "r") as f:
                 config = json.load(f)
             if self.verbose:
                 print(f"Agent config {config}")
-            sales_agent = CA-CSMGPT.from_llm(self.llm, verbose=self.verbose, **config)
+            sales_agent = ca-csmgpt.from_llm(self.llm, verbose=self.verbose, **config)
 
         #  check turns
         current_turns = len(conversation_history) + 1
