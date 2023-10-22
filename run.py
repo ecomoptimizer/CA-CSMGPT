@@ -2,14 +2,28 @@ import argparse
 import json
 import os
 
-from ca-csmgpt.agents import ca-csmgpt
+from ca_csmgpt.agents import ca_csmgpt
 from langchain.chat_models import ChatLiteLLM
 from dotenv import load_dotenv
 load_dotenv() # loads .env file 
 
-from ca-csmgpt.agents import ca-csmgpt
+from ca_csmgpt.agents import ca_csmgpt
+
 
 if __name__ == "__main__":
+import json
+
+    # Load configuration from config.json
+    with open('config.json', 'r') as file:
+        config = json.load(file)
+
+    # Access variables from the configuration
+    llm_model = config['llm_model']
+    api_key = config['api_key']
+    agent_setup = config['agent_setup']
+    custom_css = config['style']['custom_css']
+    enabled_tools = [tool for tool, enabled in config['tools'].items() if enabled]
+
     # Initialize argparse
     parser = argparse.ArgumentParser(description="Description of your program")
 
@@ -39,7 +53,7 @@ if __name__ == "__main__":
         print("No agent config specified, using a standard config")
         USE_TOOLS = "True"  # keep boolean as string to be consistent with JSON configs.
         if USE_TOOLS == "True":
-            sales_agent = ca-csmgpt.from_llm(
+            sales_agent = ca_csmgpt.from_llm(
                 llm,
                 use_tools=USE_TOOLS,
                 product_catalog="examples/sample_product_catalog.txt",
@@ -47,12 +61,12 @@ if __name__ == "__main__":
                 verbose=verbose,
             )
         else:
-            sales_agent = ca-csmgpt.from_llm(llm, verbose=verbose)
+            sales_agent = ca_csmgpt.from_llm(llm, verbose=verbose)
     else:
         with open(config_path, "r", encoding="UTF-8") as f:
             config = json.load(f)
         print(f"Agent config {config}")
-        sales_agent = ca-csmgpt.from_llm(llm, verbose=verbose, **config)
+        sales_agent = ca_csmgpt.from_llm(llm, verbose=verbose, **config)
 
     sales_agent.seed_agent()
     print("=" * 10)
