@@ -1,7 +1,8 @@
 from copy import deepcopy
 from typing import Any, Callable, Dict, List, Union
-
-from langchain import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.chains.llm import LLMChain
+from flask import Flask, render_template, request, jsonify
 from langchain.agents import AgentExecutor, LLMSingleActionAgent
 from langchain.chains import RetrievalQA
 from langchain.chains.base import Chain
@@ -10,13 +11,13 @@ from langchain.llms.base import create_base_retry_decorator
 from pydantic import BaseModel, Field
 from litellm import acompletion
 
-from ca-csmgpt.chains import SalesConversationChain, StageAnalyzerChain
-from ca-csmgpt.logger import time_logger
-from ca-csmgpt.parsers import SalesConvoOutputParser
-from ca-csmgpt.prompts import SALES_AGENT_TOOLS_PROMPT
-from ca-csmgpt.stages import CONVERSATION_STAGES
-from ca-csmgpt.templates import CustomPromptTemplateForTools
-from ca-csmgpt.tools import get_tools, setup_knowledge_base
+from ca_csmgpt.chains import SalesConversationChain, StageAnalyzerChain
+from ca_csmgpt.logger import time_logger
+from ca_csmgpt.parsers import SalesConvoOutputParser
+from ca_csmgpt.prompts import SALES_AGENT_TOOLS_PROMPT
+from ca_csmgpt.stages import CONVERSATION_STAGES
+from ca_csmgpt.templates import CustomPromptTemplateForTools
+from ca_csmgpt.tools import get_tools, setup_knowledge_base
 
 
 def _create_retry_decorator(llm: Any) -> Callable[[Any], Any]:
@@ -32,7 +33,7 @@ def _create_retry_decorator(llm: Any) -> Callable[[Any], Any]:
     return create_base_retry_decorator(error_types=errors, max_retries=llm.max_retries)
 
 
-class ca-csmgpt(Chain, BaseModel):
+class ca_csmgpt(Chain, BaseModel):
     """Controller model for the Sales Agent."""
 
     conversation_history: List[str] = []
@@ -269,8 +270,8 @@ class ca-csmgpt(Chain, BaseModel):
 
     @classmethod
     @time_logger
-    def from_llm(cls, llm: BaseLLM, verbose: bool = False, **kwargs) -> "ca-csmgpt":
-        """Initialize the ca-csmgpt Controller."""
+    def from_llm(cls, llm: BaseLLM, verbose: bool = False, **kwargs) -> "ca_csmgpt":
+        """Initialize the ca_csmgpt Controller."""
         stage_analyzer_chain = StageAnalyzerChain.from_llm(llm, verbose=verbose)
         if (
             "use_custom_prompt" in kwargs.keys()
