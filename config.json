@@ -1,0 +1,21 @@
+{
+  "llm_model": "your_llm_model_here",
+  "api_key": "your_api_key_here",
+  "agent_setup": {
+    "salesperson_name": "Hugh Morris",
+    "salesperson_role": "Customer Service & Business Development Representative",
+    "company_name": "Sleep More",
+    "company_business": "Premium Bedding Company",
+    "company_values": "Quality sleep solutions and exceptional customer service",
+    "conversation_purpose": "Assist with premium mattress purchases",
+    "conversation_type": "chat"
+  },
+  "style": {
+    "custom_css": "your_custom_css_here"
+  },
+  "tools": {
+    "tool_1": true,
+    "tool_2": false,
+    "tool_3": true
+  }
+}
