@@ -12,7 +12,7 @@ def get_long_description():
 
 
 def get_project_version():
-    version_path = os.path.join(base_dir, "CA-CSMGPT", "version.py")
+    version_path = os.path.join(base_dir, "ca_csmGPT", "version.py")
     version = {}
     with open(version_path, encoding="utf-8") as fp:
         exec(fp.read(), version)
@@ -27,14 +27,14 @@ def get_requirements(path):
 install_requires = get_requirements(os.path.join(base_dir, "requirements.txt"))
 
 setup(
-    name="CA-CSMGPT",
+    name="CA_CSMGPT",
     version=get_project_version(),
     license="Apache 2.0",
-    description="CA-CSMGPT - Your Context-Aware AI Sales Assistant",
+    description="CA_CSMGPT - Your Context-Aware AI Customer Relations Expert",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Ecommerce Optimizer",
-    url="https://github.com/ecomoptimizer/CA-CSMGPT",
+    url="https://github.com/ecomoptimizer/ca_csmGPT",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -45,7 +45,7 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    keywords="openai sales gpt autonomous agi",
+    keywords="llm CSRs gpt autonomous agi",
     python_requires=">=3.10",
     install_requires=install_requires,
     extras_require={
