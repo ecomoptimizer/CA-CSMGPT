@@ -1,4 +1,4 @@
-# :robot: CA-CSMGPT - Your Context-Aware BOOB JOB!
+# :robot: ca_csmGPT - Your Context-Aware BOOB JOB!
 
 
 
@@ -14,21 +14,21 @@ Please send an email to [the repo author](mailto:ecomoptimizer@gmail.com).
 
 ## :red_circle: Latest News
 
-- CA-CSM Agent can now take advantage of **tools**, such as look up products in a product catalog!
-- CA-CSMGPT is now compatible with [LiteLLM](https://github.com/BerriAI/litellm), choose any closed/open-sourced LLM to work with CA-CSMGPT! Thanks to LiteLLM maintainers for this contribution!
+- ca_csm Agent can now take advantage of **tools**, such as look up products in a product catalog!
+- ca_csmGPT is now compatible with [LiteLLM](https://github.com/BerriAI/litellm), choose any closed/open-sourced LLM to work with ca_csmGPT! Thanks to LiteLLM maintainers for this contribution!
 
 ## Quickstart
 
 ```python
 import os
-from ca-csmgpt.agents import ca-csmgpt
+from ca_csmgpt.agents import ca_csmgpt
 from langchain.chat_models import ChatLiteLLM
 
 os.environ['OPENAI_API_KEY'] = 'sk-xxx' # fill me in
 
 llm = ChatLiteLLM(temperature=0.4, model_name="gpt-3.5-turbo-16K-0613") # select your model
                             
-sales_agent = ca-csmgpt.from_llm(llm, use_tools=True, verbose=False,
+sales_agent = ca_csmgpt.from_llm(llm, use_tools=True, verbose=False,
                             product_catalog = "examples/sample_product_catalog.txt",
                             salesperson_name="Hugh Morris",
                             salesperson_role="Sales Representative",
@@ -95,10 +95,10 @@ This allows the agent to only talk about your products and significantly reduces
 
 The AI Sales Agent understands the conversation stage (you can define your stages fitting your needs):
 
-- Introduction: Start the conversation by introducing yourself and your company. 
-- Qualification: Qualify the prospect by confirming if they are the right person to talk to regarding your product/service.
-- Value proposition: Briefly explain how your product/service can benefit the prospect. 
-- Needs analysis: Ask open-ended questions to uncover the prospect's needs and pain points. 
+- Introduction: Start the conversation by introducing yourself, the company and ask for their name. 
+- Qualification: Qualify the purpose and intent of their inquiry asking additional or followup questions for more context if need be before responding.  Use a conversational friendly tone like a trusted family member, although professiona at all times.
+- Value proposition: Consider their inquiry as it relates to our ability to help them and/or be their solution.    Briefly explain how our product/service can benefit them presenting our offer as their solution without the hardsell. .
+- Needs analysis: Ask open-ended questions to uncover their needs, expectations, and possible pain points.  Pay attention to their responses.  
 - Solution presentation: Based on the prospect's needs, present your product/service as the solution to address their pain points.
 - Objection handling: Address any objections the prospect may have regarding your product/service. 
 - Close: Ask for the sale by proposing a next step. 
@@ -123,7 +123,7 @@ Create `.env` file and put your Open AI Key there by specifying a line:
 
 Install with pip
 
-`pip install ca-csmgpt`
+`pip install ca_csmgpt`
 
 ## Try it out 
 
@@ -135,9 +135,9 @@ from your terminal.
 
 ## Deployment
 
-We have a ca-csmgpt deployment demo via FastAPI.
+We have a ca_csmgpt deployment demo via FastAPI.
 
-Please refer to [README-api.md](https://github.com/ecomoptimizer/ca-csmgpt/blob/main/README-api.md) for instructions!
+Please refer to [README-api.md](https://github.com/ecomoptimizer/ca_csmgpt/blob/main/README-api.md) for instructions!
 
 
 ## Contact Us
@@ -147,7 +147,7 @@ For questions, you can [contact the repo author](mailto:ecomoptimizer@gmail.com)
 Follow me at [@Ecomoptimizer](https://twitter.com/Ecomoptimizer)
 
 
-## CA-CSMGPT Roadmap
+## ca_csmGPT Roadmap
 
 
 
